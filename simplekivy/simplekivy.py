@@ -1,12 +1,11 @@
 import kivy
 from kivy.factory import Factory as F
-
 from kivy.clock import mainthread
 
 from threading import Thread
 from time import sleep
 
-from app import MainApp
+from widgets import MainApp
 
 
 class SimpleKivy:
@@ -37,6 +36,8 @@ if __name__ == "__main__":
 
     x = s.Label(text = "dssds")
     s + [
-        s.Button(text="gdg", pos_hint={"center_x":.5}, size_hint=(.4, .1)),
-        s.Button(text="gdgdd", size_hint=(.4, .1))
+        s.Button(text="gdddg", pos_hint={"center_x":.5}, size_hint=(.4, .1)),
+        s.Button(text="gdgdd", size_hint=(.4, .1)),
+        s.Label(text="ffljwfe"),
+        s.Label(text="ffljwfe"),
     ]
