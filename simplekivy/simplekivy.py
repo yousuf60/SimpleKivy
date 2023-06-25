@@ -41,26 +41,6 @@ if __name__ == "__main__":
         (
         s.Label(text="ffljwfe", pos_hint={"center_x":.1, "center_y":.5}),
         s.Label(text="ffljwfe", pos_hint={ "center_y":.5}),),
+        [s.Button(text="third button"), s.Label(text="third button")],
         [s.Button(text="third button"), s.Button(text="third button")],
-        [s.Button(text="third button"), s.Button(text="third button")],
-    ]
-    
-    s + [
-        [
-            s.Label(text="texto"),
-            s.Button(text="click 1")
-        ],
-        [
-            s.Label(text="texto"),
-            s.Button(text="click 1")
-        ],
-        [
-            s.Label(text="texto"),
-            s.Button(text="click 1")
-        ],
-        (
-            s.Image(source="a.jpg", size_hint=(2, 2), pos_hint={"center_x":.5})
-        ),
-
-
     ]
