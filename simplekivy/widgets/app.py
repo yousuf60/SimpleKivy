@@ -6,10 +6,13 @@ Builder.load_file("widgets/main.kv")
 class MainApp(App):
     widgets = []
     def on_start(self):
-        for i in self.widgets:
-            if type(i) is list:pass
+        for widofmainlist in self.widgets:
+            #list for boxlayout
+            if type(widofmainlist) is list:pass
+            #list for floatlayout
+            elif type(widofmainlist) is tuple:pass
             else:    
-                self.add_to_root(i)
+                self.add_to_root(widofmainlist)
 
     def add_to_root(self, widget):
         self.add_to_widget(widget, self.root)
