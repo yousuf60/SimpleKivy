@@ -33,11 +33,12 @@ class SimpleKivy:
 
 if __name__ == "__main__":
     s = SimpleKivy(title = "gsg")
-
-    x = s.Label(text = "dssds")
-    s + [
-        s.Button(text="gdddg", pos_hint={"center_x":.5}, size_hint=(.4, .1)),
-        s.Button(text="gdgdd", size_hint=(.4, .1)),
-        s.Label(text="ffljwfe"),
-        s.Label(text="ffljwfe"),
+    s + [[
+        s.Button(text="gdddg"),
+        s.Button(text="gdgdd")],
+        (
+        s.Label(text="ffljwfe", pos_hint={"center_x":.1, "center_y":.5}),
+        s.Label(text="ffljwfe", pos_hint={ "center_y":.5}),),
+        [s.Button(text="third button"), s.Button(text="third button")],
+        [s.Button(text="third button"), s.Button(text="third button")],
     ]

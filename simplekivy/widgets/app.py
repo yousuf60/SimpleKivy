@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.factory import Factory as F
 from kivy.lang import Builder
 
 Builder.load_file("widgets/main.kv")
@@ -8,18 +9,23 @@ class MainApp(App):
     def on_start(self):
         for widofmainlist in self.widgets:
             #list for boxlayout
-            if type(widofmainlist) is list:pass
+            if type(widofmainlist) is list:
+                parent = F.BoxLayout(orientation="horizontal")
+                for item in widofmainlist:
+                    self.add_to_widget(item, parent)
+                self.add_to_root(parent)
             #list for floatlayout
-            elif type(widofmainlist) is tuple:pass
+            elif type(widofmainlist) is tuple:
+                parent = F.FloatLayout()
+                for item in widofmainlist:
+                    self.add_to_widget(item, parent)
+                self.add_to_root(parent)     
             else:    
                 self.add_to_root(widofmainlist)
 
     def add_to_root(self, widget):
         self.add_to_widget(widget, self.root)
-        # try:
-        #     self.root.add_widget(widget()) 
-        # except TypeError:
-        #     self.root.add_widget(widget) 
+        
 
     def add_to_widget(self, widget, parent):
         try:
