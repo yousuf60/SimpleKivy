@@ -1,3 +1,4 @@
+
 import kivy
 from kivy.factory import Factory as F
 from kivy.clock import mainthread
@@ -33,6 +34,7 @@ class SimpleKivy:
 
 if __name__ == "__main__":
     s = SimpleKivy(title = "gsg")
+    
     s + [[
         s.Button(text="gdddg"),
         s.Button(text="gdgdd")],
@@ -41,4 +43,24 @@ if __name__ == "__main__":
         s.Label(text="ffljwfe", pos_hint={ "center_y":.5}),),
         [s.Button(text="third button"), s.Button(text="third button")],
         [s.Button(text="third button"), s.Button(text="third button")],
+    ]
+    
+    s + [
+        [
+            s.Label(text="texto"),
+            s.Button(text="click 1")
+        ],
+        [
+            s.Label(text="texto"),
+            s.Button(text="click 1")
+        ],
+        [
+            s.Label(text="texto"),
+            s.Button(text="click 1")
+        ],
+        (
+            s.Image(source="a.jpg", size_hint=(2, 2), pos_hint={"center_x":.5})
+        ),
+
+
     ]
