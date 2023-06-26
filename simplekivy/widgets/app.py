@@ -11,15 +11,13 @@ class MainApp(App):
             #list for boxlayout
             if type(widofmainlist) is list:
                 parent = F.BoxLayout(orientation="horizontal")
-                for item in widofmainlist:
-                    self.add_to_widget(item, parent)
-                self.add_to_root(parent)
+                self.row_widget_adder(widofmainlist, parent)
+
             #list for floatlayout
             elif type(widofmainlist) is tuple:
                 parent = F.FloatLayout()
-                for item in widofmainlist:
-                    self.add_to_widget(item, parent)
-                self.add_to_root(parent)     
+                self.row_widget_adder(widofmainlist, parent) 
+                
             else:    
                 self.add_to_root(widofmainlist)
 
@@ -32,3 +30,8 @@ class MainApp(App):
             parent.add_widget(widget()) 
         except TypeError:
             parent.add_widget(widget) 
+
+    def row_widget_adder(self, widofmainlist, parent):
+        for item in widofmainlist:
+            self.add_to_widget(item, parent)
+        self.add_to_root(parent)        
