@@ -6,7 +6,7 @@ from kivy.clock import mainthread
 from threading import Thread
 from time import sleep
 
-from widgets import MainApp
+from .widgets import MainApp
 
 
 class SimpleKivy:

@@ -2,7 +2,10 @@ from kivy.app import App
 from kivy.factory import Factory as F
 from kivy.lang import Builder
 
-Builder.load_file("widgets/main.kv")
+import os.path
+
+file_path = os.path.abspath(os.path.dirname(__file__))
+Builder.load_file(os.path.join(file_path, "main.kv"))
 
 class MainApp(App):
     widgets = []
@@ -17,7 +20,7 @@ class MainApp(App):
             elif type(widofmainlist) is tuple:
                 parent = F.FloatLayout()
                 self.row_widget_adder(widofmainlist, parent) 
-                
+
             else:    
                 self.add_to_root(widofmainlist)
 

@@ -1,1 +1,1 @@
-from simpleKivy import SimpleKivy
+from .simplekivy import SimpleKivy
