@@ -21,3 +21,8 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/yousuf60/SimpleKivy"
 "Bug Tracker" = "https://github.com/yousuf60/SimpleKivy/issues"
+
+
+
+[tool.setuptools.package-data]
+"simplekivy.widgets" = ["*.kv"]
