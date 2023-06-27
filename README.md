@@ -36,7 +36,7 @@ from simplekivy import SimpleKivy
 s = SimpleKivy(title="test")
 dp = s.metrics.dp
 s + [
-        (# floatlayout <=> tuple
+    (# floatlayout <=> tuple
         {"size_hint": (1, None)},#<=> add the floatlayout kwargs
         s.Label(text="ffljwfe", pos_hint={"center_x":.1, "center_y":.5}),
         {"height":  dp(100)}, #kwargs
