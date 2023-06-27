@@ -9,8 +9,8 @@ you are using kivy but via simplekivy to write simple python code faster
 
 you can build kvlang and creat your own classes and widgets
 
-the widgets are added only ones via simpleKivyObject + [
-
+the widgets are added only once via simpleKivyObject + [
+#kv_widgets
 ]
 
 example code:
@@ -53,6 +53,11 @@ s + [
 
 ```
 
+### Hints
+------
 
-list => BoxLayout
-tuple => FloatLayout
+- list => BoxLayout
+- tuple => FloatLayout
+- the more you understand kivy, the more you enjoy its flexibility
+
+
