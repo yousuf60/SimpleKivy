@@ -2,7 +2,7 @@
 
 ### requirements:
 -------
-* kivy 
+* [kivy]("https://github.com/kivy/kivy") 
 
 
 you are using kivy but via simplekivy to write simple python code faster
