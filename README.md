@@ -10,7 +10,9 @@ you are using kivy but via simplekivy to write simple python code faster
 you can build kvlang and creat your own classes and widgets
 
 the widgets are added only once via simpleKivyObject + [
+
 #kv_widgets
+
 ]
 
 example code:
