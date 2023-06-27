@@ -16,7 +16,7 @@ class MainApp(App):
                 parent = F.BoxLayout(orientation="horizontal")
                 self.row_widget_adder(widofmainlist, parent)
 
-            #list for floatlayout
+            #tuple for floatlayout
             elif type(widofmainlist) is tuple:
                 parent = F.FloatLayout()
                 self.row_widget_adder(widofmainlist, parent) 
@@ -36,5 +36,10 @@ class MainApp(App):
 
     def row_widget_adder(self, widofmainlist, parent):
         for item in widofmainlist:
-            self.add_to_widget(item, parent)
+            #put new boxlayout or floatlayout kwargs
+            if type(item) is dict:
+                print(item)
+                parent.__init__(**item)
+                
+            else:self.add_to_widget(item, parent)
         self.add_to_root(parent)        
