@@ -78,7 +78,7 @@ s + [
 ]
 
 ```
-
+<img src="https://github.com/yousuf60/SimpleKivy/assets/64571068/d6bec9d8-d387-4537-a82a-fcd6afc55bf4" width="500">
 
 ### Hints
 ------
