@@ -1,6 +1,6 @@
 # SimpleKivy
 
-### requirements:
+### Requirements:
 -------
 * [kivy]("https://github.com/kivy/kivy") 
 
@@ -15,7 +15,8 @@ the widgets are added only once via simpleKivyObject + [
 
 ]
 
-example code:
+### Examples to test:
+-----
 ```python
 from simplekivy import SimpleKivy
 s = SimpleKivy(title="test")
@@ -54,6 +55,30 @@ s + [
 
 
 ```
+
+```python
+from simplekivy import SimpleKivy
+
+s = SimpleKivy(title="test app")
+
+dp = s.metrics.dp
+inp1 = s.TextInput(size_hint=(.5, None), height=dp(50), pos_hint={"center_x":.5})
+inp1_button = s.Button(text="click", on_press=lambda x:print(inp1.text),
+                    size_hint=(.5, None), height=dp(50),
+                    pos_hint={"center_x":.5})
+
+s + [
+    (#floatlayout
+        {"size_hint":(1, 1)},
+        [#boxlayout
+            {"orientation":"vertical", "size_hint":(1, None), "height":dp(200),
+            "spacing":"60dp","pos_hint":{"center_y":.5}},
+            inp1, 
+            inp1_button])
+]
+
+```
+
 
 ### Hints
 ------
