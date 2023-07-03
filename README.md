@@ -5,9 +5,9 @@
 * [kivy]("https://github.com/kivy/kivy") 
 
 
-you are using kivy but via simplekivy to write simple python code faster
+simplekivy is built on kivy to write simple code faster
 
-you can build kvlang and creat your own classes and widgets
+you can write kvlang and creat your own classes and widgets as kivy is flexible
 
 the widgets are added only once via simpleKivyObject + [
 
