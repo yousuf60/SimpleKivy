@@ -1,8 +1,8 @@
 # SimpleKivy
 
-### Requirements:
+### Perfect versions:
 -------
-* [kivy]("https://github.com/kivy/kivy") 
+* [kivy==2.2.1]("https://pypi.org/project/Kivy/2.2.1/") 
 
 
 simplekivy is built on kivy to write simple code faster
