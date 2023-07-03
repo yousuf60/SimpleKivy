@@ -18,7 +18,7 @@ class SimpleKivy:
         self.app.widgets = widgets
         self.app.run()        
          
-
+   
     def __getattr__(self, attr):
         if hasattr(kivy, attr):
             return getattr(kivy, attr)
