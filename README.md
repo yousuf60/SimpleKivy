@@ -65,7 +65,7 @@ s + [
 ]
 
 ```
-<img src="https://github.com/yousuf60/SimpleKivy/assets/64571068/03157293-fb68-4d2f-8234-807ffa9df560" width="500">
+
 
 
 ```python
@@ -89,7 +89,7 @@ s + [
     )
 ]
 ```
-<img src="https://github.com/yousuf60/SimpleKivy/assets/64571068/3eded17a-e691-4b5f-9597-eaca67bba5d0" width="500">
+<img src="https://github.com/yousuf60/SimpleKivy/assets/64571068/997481b1-20cb-4571-91f5-fed311f6f7bc" width="500">
 
 
 
