@@ -13,7 +13,7 @@ class MainApp(App):
     def on_start(self):
         
         for widofmainlist in self.widgets:
-            if type(widofmainlist) in (list, tuple):
+            if type(widofmainlist) in (list, tuple, str):
                 self.freeze(widofmainlist)
             else:
                 self.add_to_root(widofmainlist)
@@ -29,6 +29,10 @@ class MainApp(App):
         elif type(wid) is tuple:
             parent = F.FloatLayout()
             self.row_widget_adder(wid, parent) 
+
+        elif type(wid) is str:
+            widget = Builder.load_string(wid)
+            self.add_to_root(widget)
 
             
 
@@ -50,7 +54,7 @@ class MainApp(App):
             if type(item) is dict:
                 parent.__init__(**item)
                 print("dict")
-            elif type(item) in (list, tuple):
+            elif type(item) in (list, tuple, str):
                 self.freeze(item)
             else:self.add_to_widget(item, parent)
         self.add_to_root(parent)        
