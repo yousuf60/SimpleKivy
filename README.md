@@ -1,5 +1,9 @@
 # SimpleKivy
 
+```bash
+pip install simplekivy
+```
+
 ### Perfect versions:
 -------
 * [kivy==2.2.1]("https://pypi.org/project/Kivy/2.2.1/") 
