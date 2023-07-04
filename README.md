@@ -94,8 +94,8 @@ s + [
 
 
 you can also add kvlang string directly instead of using 
-s.lang.builder
-or kivy.lang.builder
+s.lang.Builder
+or kivy.lang.Builder
 
 ```python
 from simplekivy import SimpleKivy
