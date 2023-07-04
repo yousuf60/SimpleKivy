@@ -134,7 +134,7 @@ s + [
 
 ```
 
-
+<img src="https://github.com/yousuf60/SimpleKivy/assets/64571068/9e9e445e-0c6f-45de-9580-cd7fbde1f010" width="500">
 
 ### Hints
 ------
