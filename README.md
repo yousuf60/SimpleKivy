@@ -26,12 +26,12 @@ s = SimpleKivy(title="test")
 dp = s.metrics.dp
 s + [
     (# floatlayout <=> ()
-        {"size_hint": (1, None)},#<=> add the floatlayout kwargs
-        s.Label(text="ffljwfe", pos_hint={"center_x":.1, "center_y":.5}),
+        {"size_hint": (1, 1)},#<=> add the floatlayout kwargs
+        s.Label(text="ffljwfe", pos_hint={"center_x":.5, "center_y":.5}),
         {"height":  dp(100)}, #kwargs
     ),
     [ #boxlayout <=> []
-        {"size_hint": (.5, .4)},
+        {"size_hint": (1, .5)},
         s.Button(text="gdddg"),
         s.Button(text="gdgdd")
     ],
@@ -93,6 +93,9 @@ s + [
 
 
 
+you can also add kvlang string directly instead of using 
+s.lang.builder
+or kivy.lang.builder
 
 ```python
 from simplekivy import SimpleKivy
