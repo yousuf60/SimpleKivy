@@ -113,7 +113,7 @@ def btn_pressed():
 
 
 #add a new method to app
-s.app.btn_pressed = btn_pressed
+s.myapp.btn_pressed = btn_pressed
 
 KV_BTN = """
 
