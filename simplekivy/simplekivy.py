@@ -10,13 +10,14 @@ from .widgets import MainApp
 
 
 class SimpleKivy:
-    def __init__(self, *args, **kwargs):
-        self.app = MainApp(*args, **kwargs)
+    def __init__(self, make_app=True, *args, **kwargs):
+        if make_app:
+            self.myapp = MainApp(*args, **kwargs)
         
     #use + to add widgets
     def __add__(self, widgets):
-        self.app.widgets = widgets
-        self.app.run()        
+        self.myapp.widgets = widgets
+        self.myapp.run()        
          
    
     def __getattr__(self, attr):
@@ -28,6 +29,7 @@ class SimpleKivy:
 
         else:
             raise Exception(attr + " doasn't exists")
-
+    def get_running_app(self):
+        return kivy.app.App.get_running_app()
 
 
