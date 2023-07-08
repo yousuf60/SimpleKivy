@@ -103,7 +103,7 @@ or `kivy.lang.Builder`
 
 ```python
 from simplekivy import SimpleKivy
-s = SimpleKivy(title="test app")
+s = SimpleKivy(title="test app", make_app=True)
 
 def on_enter(instance):
     print(instance.text)
@@ -119,8 +119,8 @@ KV_BTN = """
 
 Button:
     text: "press me"
-    size_hint:.4, .1
-    pos_hint: {"center_x": .5}
+    size_hint:.4, .2
+    pos_hint: {"center_x": .5, "center_y": .5}
     on_press:app.btn_pressed()
 """
 ainput = s.TextInput(hint_text="type anything", multiline=False,  size_hint=(1, None),
@@ -129,15 +129,16 @@ ainput = s.TextInput(hint_text="type anything", multiline=False,  size_hint=(1, 
 ainput.bind(on_text_validate=on_enter)
 
 s + [
-    [{"orientation":"vertical", "size_hint":(1, .4)},
+    [{"orientation":"vertical", "size_hint":(1, .2)},
     s.Label(text="hello world", halign="center"),
     s.Label(text="testo")],
     ({"size_hint":(.4, .4), "pos_hint":{"center_x":.5}},
         ainput 
     ),
-    ({"size_hint": (1, .2)},
+    ({"size_hint": (1, .4)},
         KV_BTN),
 ]
+
 
 ```
 
