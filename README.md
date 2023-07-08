@@ -148,5 +148,9 @@ s + [
 
 - list => BoxLayout
 - tuple => FloatLayout
+- set `make_app` to `False` if you dont want to run the kivy App 
+```python
+s = SimpleKivy(make_app=False)
+```
+- to reach the main App object do `s.myapp`
 - the more you understand kivy, the more you enjoy its flexibility
-
