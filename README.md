@@ -30,9 +30,9 @@ s = SimpleKivy(title="test")
 dp = s.metrics.dp
 s + [
     (# floatlayout <=> ()
-        {"size_hint": (1, 1)},#<=> add the floatlayout kwargs
+        {"size_hint": (1, None)},#<=> add the floatlayout kwargs
         s.Label(text="ffljwfe", pos_hint={"center_x":.5, "center_y":.5}),
-        {"height":  dp(100)}, #kwargs
+        {"height":  dp(200)}, #kwargs as you want will be added 
     ),
     [ #boxlayout <=> []
         {"size_hint": (1, .5)},
