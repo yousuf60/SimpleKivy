@@ -11,11 +11,23 @@ Builder.load_file(os.path.join(file_path, "main.kv"))
 class MainApp(App):
     widgets = []
     def on_start(self):
-        
         for widofmainlist in self.widgets:
             if type(widofmainlist) in (list, tuple,  str):
                 wid = self.freeze(widofmainlist)
                 self.add_to_root(wid)
+
+            elif type(widofmainlist) is dict:
+                items = widofmainlist.copy().items()
+                for key, value in items:
+                    if type(key) is not str :
+                        try:keyI = key()
+                        except: keyI = key
+                        wid = self.freeze(value)
+                        self.add_to_widget(wid, keyI)
+                        self.add_to_root(keyI)
+                        del widofmainlist[key]
+
+                self.root.__init__(**widofmainlist)
             else:
                 self.add_to_root(widofmainlist)
 
@@ -49,11 +61,19 @@ class MainApp(App):
             parent.add_widget(widget) 
 
     def row_widget_adder(self, widofmainlist, parent):
-        
-                
         for item in widofmainlist:
-            #put new boxlayout or floatlayout kwargs
+        
             if type(item) is dict:
+                items = item.copy().items()
+                for key, value in items:
+                    if type(key) is not str :
+                        try:keyI = key()
+                        except: keyI = key
+                        wid = self.freeze(value)
+                        self.add_to_widget(wid, keyI)
+                        self.add_to_widget(keyI, parent)
+                        del item[key]
+
                 parent.__init__(**item)
             elif type(item) in (list, tuple, str):
                 wid = self.freeze(item)
