@@ -47,6 +47,9 @@ class MainApp(App):
         elif type(wid) is str:
             widget = Builder.load_string(wid)
             return widget
+        else:
+            return wid
+            
         
             
 
