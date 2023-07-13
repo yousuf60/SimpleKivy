@@ -17,22 +17,12 @@ class MainApp(App):
                 self.add_to_root(wid)
 
             elif type(widofmainlist) is dict:
-                items = widofmainlist.copy().items()
-                for key, value in items:
-                    if type(key) is not str :
-                        try:keyI = key()
-                        except: keyI = key
-                        wid = self.freeze(value)
-                        self.add_to_widget(wid, keyI)
-                        self.add_to_root(keyI)
-                        del widofmainlist[key]
-
-                self.root.__init__(**widofmainlist)
+                self.freeze(widofmainlist, parent=self.root)
             else:
                 self.add_to_root(widofmainlist)
 
 
-    def freeze(self, wid):
+    def freeze(self, wid, parent = None):
         #list for boxlayout
         if type(wid) is list:
             parent = F.BoxLayout(orientation="horizontal")
@@ -44,9 +34,13 @@ class MainApp(App):
             self.row_widget_adder(wid, parent) 
             return parent
 
+        elif type(wid) is dict:
+            self.row_widget_adder([wid], parent)
+    
         elif type(wid) is str:
             widget = Builder.load_string(wid)
             return widget
+
         else:
             return wid
             
@@ -70,10 +64,11 @@ class MainApp(App):
                 items = item.copy().items()
                 for key, value in items:
                     if type(key) is not str :
-                        try:keyI = key()
+                        try:keyI = key()  #keyI => keyInstance
                         except: keyI = key
-                        wid = self.freeze(value)
-                        self.add_to_widget(wid, keyI)
+                        wid = self.freeze(value, parent = keyI)
+                        if wid:
+                            self.add_to_widget(wid, keyI)
                         self.add_to_widget(keyI, parent)
                         del item[key]
 
