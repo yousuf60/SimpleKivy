@@ -6,7 +6,7 @@ from kivy.clock import mainthread
 from threading import Thread
 from time import sleep
 
-from .widgets import MainApp
+from .widgets import MainApp, AppMethods
 
 
 class SimpleKivy:
@@ -32,4 +32,7 @@ class SimpleKivy:
     def get_running_app(self):
         return kivy.app.App.get_running_app()
 
-
+    def build(self, widgets):
+        app = AppMethods()
+        widget = app.freeze(widgets)
+        return widget
