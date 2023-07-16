@@ -1,1 +1,1 @@
-from .app import MainApp
+from .app import MainApp, AppMethods
