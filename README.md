@@ -10,7 +10,7 @@ pip install simplekivy
 * python >= 3.7
 
 
-simplekivy is built on kivy to write simple code faster
+simplekivy is built with kivy to write quickly simple codes
 
 you can write kvlang and creat your own classes and widgets as kivy is flexible
 
@@ -20,8 +20,33 @@ the widgets are added only once via simpleKivyObject + [
 
 ]
 
+and you can build simplekivy way using `s.build`
+
 ### Examples to test:
 -----
+
+```python
+from simplekivy import SimpleKivy
+s = SimpleKivy(title="test app")
+
+box = s.build([s.Label(text="qf47", pos_hint={"center_y": .8})])
+floatL = s.build("""
+FloatLayout:
+    
+    Button:
+        text:"test"
+        size_hint:.3, .2
+        pos_hint: {"center_y": .8}
+""")
+s + [(
+    {s.BoxLayout: box,
+    s.BoxLayout(size_hint=(None, None)): [s.Label(text="qfe")],
+    floatL: s.Label(text="testo testo"),
+    },)
+]
+#as you know for python dict .. key "objects" should be different objects
+
+```
 
 ```python
 
@@ -93,9 +118,6 @@ s + [
     )
 ]
 ```
-<img src="https://github.com/yousuf60/SimpleKivy/assets/64571068/997481b1-20cb-4571-91f5-fed311f6f7bc" width="500">
-
-
 
 you can also add kvlang string directly instead of using 
 `s.lang.Builder`
@@ -142,8 +164,6 @@ s + [
 
 ```
 
-<img src="https://github.com/yousuf60/SimpleKivy/assets/64571068/9e9e445e-0c6f-45de-9580-cd7fbde1f010" width="500">
-
 ### Hints
 ------
 
@@ -154,4 +174,11 @@ s + [
 s = SimpleKivy(make_app=False)
 ```
 - to reach the main App object do `s.myapp`
+- you can pass to `s.build` a `list, tuple, dict and kivy lang string`
 - the more you understand kivy, the more you enjoy its flexibility
+
+----
+
+<img src="https://github.com/yousuf60/SimpleKivy/assets/64571068/997481b1-20cb-4571-91f5-fed311f6f7bc" width="300">
+
+<img src="https://github.com/yousuf60/SimpleKivy/assets/64571068/9e9e445e-0c6f-45de-9580-cd7fbde1f010" width="300">
