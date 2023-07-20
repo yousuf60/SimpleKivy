@@ -110,6 +110,8 @@ s = SimpleKivy(make_app=False)
 
 ----
 
-<img src="" width="300">
 
-<img src="" width="300">
+<img src="https://github.com/yousuf60/SimpleKivy/assets/64571068/5905a746-8278-4471-b1e3-d85b7eb5eec6" width="400">
+
+
+<img src="https://github.com/yousuf60/SimpleKivy/assets/64571068/f2abb219-55c1-4e9e-a9e9-e46346d6176f" width="400">
