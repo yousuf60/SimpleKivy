@@ -48,6 +48,10 @@ BoxLayout:
 text_input =  s.TextInput(hint_text="type", size_hint=(.5, None), height=dp(60), pos_hint={"center_x":.5})
 btn = s.Button(text = "click", size_hint=(.4, .2), pos_hint={"center_x":.5, "center_y":.5}, on_press=pressed)
 label =  s.Label(text = "type")
+
+# you don't really need to build here and can just pass the list .. 
+# but iam showing you how to get objets using s.build
+# so you may need it somewhere else
 front = s.build([{"orientation":"vertical"},
                 text_input,
                 (btn,),
