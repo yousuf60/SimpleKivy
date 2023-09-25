@@ -4,10 +4,10 @@
 pip install simplekivy
 ```
 
-### Perfect versions:
+### Do not forget to install:
 -------
-* [kivy==2.2.1]("https://pypi.org/project/Kivy/2.2.1/") 
-* python >= 3.7
+* [kivy]("https://pypi.org/project/Kivy") 
+* [kivymd]("https://github.com/kivymd/KivyMD") `master branch is recommended`
 
 
 simplekivy is built with kivy to write quickly simple codes
@@ -45,9 +45,9 @@ BoxLayout:
 
 """
 
-text_input =  s.TextInput(hint_text="type", size_hint=(.5, None), height=dp(60), pos_hint={"center_x":.5})
-btn = s.Button(text = "click", size_hint=(.4, .2), pos_hint={"center_x":.5, "center_y":.5}, on_press=pressed)
-label =  s.Label(text = "type")
+text_input =  s.STextInput(hint_text="type", size_hint=(.5, None), height=dp(60), pos_hint={"center_x":.5})
+btn = s.SButton(text = "click", size_hint=(.4, .2), pos_hint={"center_x":.5, "center_y":.5}, on_press=pressed)
+label =  s.SLabel(text = "type")
 
 # you don't really need to build here and can just pass the list .. 
 # but iam showing you how to get objets using s.build
@@ -86,12 +86,12 @@ manager = {screen_manager: None}
 scr = {}
 
 for i in range(4):
-    left = s.Button(text="left")
-    right = s.Button(text="right")
+    left = s.SButton(text="left")
+    right = s.SButton(text="right")
     screen = ScreenI(name=str(i))
     left.on_press = screen.left
     right.on_press = screen.right
-    scr[screen] = [{"orientation":"vertical"},s.Label(text=str(i)),[ left, right]]
+    scr[screen] = [{"orientation":"vertical"},s.SLabel(text=str(i)),[ left, right]]
 
 manager[screen_manager] = scr
 s + [
