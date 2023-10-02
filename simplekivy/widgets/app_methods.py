@@ -20,12 +20,12 @@ class AppMethods:
         
         #list for boxlayout
         if type_wid is list:
-            parent = F.BoxLayout(orientation="horizontal")
+            parent = self.generate_box()(orientation="horizontal")
             self.row_widget_adder(wid, parent)
             return parent
         #tuple for floatlayout
         elif type_wid is tuple:
-            parent = F.FloatLayout()
+            parent = self.generate_float()()
             self.row_widget_adder(wid, parent) 
             return parent
 
@@ -106,3 +106,14 @@ class AppMethods:
 
             else:self.add_to_widget(item, parent)
 
+    def generate_box(slef):
+        return F.BoxLayout
+    def generate_float(self):
+        return F.FloatLayout
+
+class MDAppMethods(AppMethods):
+    def generate_box(slef):
+        return F.MDBoxLayout
+        
+    def generate_float(self):
+        return F.MDFloatLayout
