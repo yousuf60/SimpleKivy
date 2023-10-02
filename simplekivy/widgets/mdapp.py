@@ -4,14 +4,13 @@ from kivy.lang import Builder
 
 import os.path
 
-from .app_methods import AppMethods
+from .app_methods import MDAppMethods
 
 file_path = os.path.abspath(os.path.dirname(__file__))
-
 Builder.load_file(os.path.join(file_path, "main.kv"))
 
-class MainApp(MDApp, AppMethods):
-    on_start = AppMethods.on_start
-    
+class MainApp(MDApp, MDAppMethods):
+    on_start = MDAppMethods.on_start
+
     
 

@@ -6,16 +6,17 @@ from kivy.clock import mainthread
 from threading import Thread
 from time import sleep
 
-from .widgets.app_methods import AppMethods
+
 
 class SimpleKivy:
     def __init__(self, make_app=True, md_mode= False, *args, **kwargs):
-        if not md_mode:
-            from .widgets.app import MainApp
-        else:
-            from .widgets.mdapp import MainApp
-
+        self.md_mode = md_mode
         if make_app:
+            if not md_mode:
+                from .widgets.app import MainApp
+            else:
+                from .widgets.mdapp import MainApp
+
             self.myapp = MainApp(*args, **kwargs)
 
         
@@ -39,6 +40,11 @@ class SimpleKivy:
         return kivy.app.App.get_running_app()
 
     def build(self, widgets):
-        app = AppMethods()
+        from .widgets.app_methods import AppMethods, MDAppMethods
+        
+        if not self.md_mode:
+            app = AppMethods()
+        else:
+            app = MDAppMethods()
         widget = app.freeze(widgets)
         return widget
