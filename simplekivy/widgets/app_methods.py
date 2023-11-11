@@ -6,11 +6,11 @@ class AppMethods:
     
     def on_start(self):
         for widofmainlist in self.widgets:
-            if type(widofmainlist) in (list, tuple,  str):
+            if type(widofmainlist) in {list, tuple,  str}:
                 wid = self.freeze(widofmainlist)
                 self.add_to_root(wid)
 
-            elif type(widofmainlist) is dict or set:
+            elif type(widofmainlist) in {dict , set}:
                 self.freeze(widofmainlist, parent=self.root)
             else:
                 self.add_to_root(widofmainlist)
