@@ -1,11 +1,8 @@
 
 import kivy
 from kivy.factory import Factory as F
-from kivy.clock import mainthread
 
-from threading import Thread
 from time import sleep
-
 
 
 class SimpleKivy:
