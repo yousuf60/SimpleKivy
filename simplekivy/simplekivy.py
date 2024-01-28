@@ -30,8 +30,11 @@ class SimpleKivy:
         elif hasattr(F, attr):
             return getattr(F, attr)
 
-        else:
-            raise Exception(attr + " doasn't exists")
+        elif self.md_mode:
+            import kivymd
+            if hasattr(kivymd, attr):
+                return getattr(kivymd, attr)
+        raise Exception(attr + " doasn't exists")
             
     def get_running_app(self):
         return kivy.app.App.get_running_app()
